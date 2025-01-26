@@ -61,7 +61,7 @@ body {
     font-size: 1.2em;
     border: none;
     border-radius: 50px;
-    background-color: #2F4F2F;  /* Dark green color */
+    background-color: #2F4F2F;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -140,8 +140,8 @@ body {
     }
 
     #snow-question {
-        padding: 15px 30px;
-        font-size: 1em;
+        padding: 20px 40px;  /* Match the desktop padding */
+        font-size: 1.1em;    /* Slightly smaller font but not too small */
         margin-bottom: 20px;
     }
 
