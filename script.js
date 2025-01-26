@@ -66,22 +66,33 @@ document.addEventListener('DOMContentLoaded', () => {
         currentEmoji = emojis[newIndex];
     }
 
+    let remainingImages = [];
+
     function randomizeMushuImage() {
-        let newIndex;
-        do {
-            newIndex = Math.floor(Math.random() * mushuImages.length);
-        } while (newIndex === lastImageIndex);
+        // If no images remain, reset the pool with all images except the last shown
+        if (remainingImages.length === 0) {
+            remainingImages = mushuImages.filter(img => {
+                const currentImage = mushuImage.src.split('/').pop();
+                return img !== currentImage;
+            });
+        }
         
-        lastImageIndex = newIndex;
+        // Get random index from remaining images
+        const randomIndex = Math.floor(Math.random() * remainingImages.length);
+        const selectedImage = remainingImages[randomIndex];
+        
+        // Remove selected image from remaining pool
+        remainingImages.splice(randomIndex, 1);
+        
         const newImage = new Image();
         newImage.onload = () => {
             mushuImage.src = newImage.src;
         };
         newImage.onerror = () => {
-            console.error('Failed to load image:', mushuImages[newIndex]);
+            console.error('Failed to load image:', selectedImage);
             mushuImage.src = 'images/Mushu1.jpg';
         };
-        newImage.src = `images/${mushuImages[newIndex]}`;
+        newImage.src = `images/${selectedImage}`;
     }
 
     randomizeMushuImage();
