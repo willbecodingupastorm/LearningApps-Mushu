@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         "Mushu would rather take a nap on a cactus than deal with snow.",
         "Snow? Mushu's idea of winter wonderland is a heated blanket.",
         "Mushu looks at snow and wonders if it's a personal attack.",
-        "If Mushu had a snowball, he'd throw it... right at the sun."
+        "If Mushu had a snowball, he'd throw it... right at the sun.",
+        "Mushu thinks snow is cute... but not as cute as being a lap potato for Daniel.",
+        "Mushu doesn't mind snow... as long as it doesn't interfere with his professional lap-dog duties with Vanessa."
     ];
 
     const responseColors = [
