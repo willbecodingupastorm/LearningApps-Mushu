@@ -57,8 +57,9 @@ body {
 
 #snow-question {
     margin-bottom: 30px;
-    padding: 20px 40px;
-    font-size: 1.2em;
+    margin-top: 15px;
+    padding: 18px 40px;
+    font-size: 1.1em;
     border: none;
     border-radius: 50px;
     background-color: #2F4F2F;
@@ -140,9 +141,10 @@ body {
     }
 
     #snow-question {
-        padding: 20px 40px;  /* Match the desktop padding */
-        font-size: 1.1em;    /* Slightly smaller font but not too small */
-        margin-bottom: 20px;
+        padding: 18px 40px;
+        font-size: 1em;
+        margin-bottom: 25px;
+        margin-top: 10px;
     }
 
     .response {
