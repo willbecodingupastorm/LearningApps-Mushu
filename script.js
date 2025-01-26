@@ -4,26 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const response = document.getElementById('response');
 
     const responses = [
-        "Mushu doesn't like snow.",
-        "Mushu still doesn't like snow.",
-        "NOPE. Mushu's not a fan of snow.",
-        "Mushu hates snow more than Mondays.",
-        "Snow? Mushu would rather not.",
-        "Let's just say Mushu and snow aren't friends.",
-        "Mushu's opinion on snow: hard pass.",
-        "Snow is definitely not on Mushu's favorite things list.",
         "Snow? Mushu sees it and says, 'Do I look like Elsa to you?'",
-        "Mushu would rather wrestle a dragon than step in snow.",
-        "Snow makes Mushu want to hibernate...forever.",
-        "Mushu thinks snow is nature's bad idea.",
         "If snow were a person, Mushu would block it on all social media.",
-        "Mushu's official snow policy: Avoid at all costs.",
+        "Mushu hates snow more than Mondays.",
+        "Snow makes Mushu want to hibernate...forever.",
         "Mushu steps in snow, reconsiders all life choices.",
+        "If snow had a Yelp page, Mushu would leave a one-star review.",
         "Snow and Mushu? Like oil and water, but grumpier.",
         "Snow makes Mushu question why he ever left his warm cave.",
-        "If snow had a Yelp page, Mushu would leave a one-star review.",
         "Mushu's motto: Life's too short for cold feet.",
-        "Snow tried to befriend Mushu. Mushu said, 'Not in this lifetime.'"
+        "Snow tried to befriend Mushu. Mushu said, 'Not in this lifetime.'",
+        "Mushu sees snow and thinks, 'Nope, not today, Satan.'",
+        "Mushu would rather take a nap on a cactus than deal with snow.",
+        "Snow? Mushu's idea of winter wonderland is a heated blanket.",
+        "Mushu looks at snow and wonders if it's a personal attack.",
+        "If Mushu had a snowball, he'd throw it... right at the sun."
     ];
 
     const responseColors = [
