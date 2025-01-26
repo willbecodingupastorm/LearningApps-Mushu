@@ -122,15 +122,33 @@ body {
 @media (max-width: 600px) {
     .container {
         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+    }
+
+    .image-container {
+        height: 300px;  /* Reduced height for mobile */
+        margin-bottom: 20px;
+        flex-shrink: 0;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+        margin-bottom: 15px;
     }
 
     #snow-question {
-        padding: 12px 24px;
+        padding: 15px 30px;
         font-size: 1em;
+        margin-bottom: 20px;
     }
 
     .response {
         font-size: 1.2em;
+        margin-top: 15px;
+        margin-bottom: 20px;
     }
 }
 
@@ -162,16 +180,6 @@ body {
 
 #ask-again:hover {
     background-color: #543210;
-}
-
-.subtitle {
-    margin-bottom: 20px;
-}
-
-@media (max-width: 600px) {
-    .subtitle {
-        font-size: 1.4em;
-    }
 }
 
 .emoji-container {
