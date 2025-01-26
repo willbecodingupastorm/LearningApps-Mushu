@@ -122,35 +122,37 @@ body {
 
 @media (max-width: 600px) {
     .container {
-        padding: 10px;
+        padding: 15px;
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        justify-content: space-between;
+        min-height: 100vh;
+        justify-content: flex-start;
+        gap: 15px;
     }
 
     .image-container {
-        height: 300px;  /* Reduced height for mobile */
-        margin-bottom: 20px;
+        height: 250px;
+        margin: 15px 0;
         flex-shrink: 0;
     }
 
     .subtitle {
         font-size: 1.2em;
-        margin-bottom: 15px;
+        margin: 10px 0;
     }
 
     #snow-question {
-        padding: 18px 40px;
+        padding: 15px 35px;
         font-size: 1em;
-        margin-bottom: 25px;
-        margin-top: 10px;
+        margin: 5px 0 15px 0;
+        width: auto;
+        align-self: center;
     }
 
     .response {
-        font-size: 1.2em;
-        margin-top: 15px;
-        margin-bottom: 20px;
+        font-size: 1.1em;
+        margin: 10px 0;
+        padding: 0 10px;
     }
 }
 
