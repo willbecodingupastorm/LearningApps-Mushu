@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Mushu3.jpg': { origin: '50% 55%', scale: 1.6 }
     };
 
+    let currentImageIndex = 0;
     const mushuImages = ['Mushu1.jpg', 'Mushu2.jpg', 'Mushu3.jpg'];
 
     let currentEmoji = '';
@@ -66,36 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         currentEmoji = emojis[newIndex];
     }
 
-    let remainingImages = [];
-
-    function randomizeMushuImage() {
-        // If no images remain, reset the pool with all images except the last shown
-        if (remainingImages.length === 0) {
-            remainingImages = mushuImages.filter(img => {
-                const currentImage = mushuImage.src.split('/').pop();
-                return img !== currentImage;
-            });
-        }
-        
-        // Get random index from remaining images
-        const randomIndex = Math.floor(Math.random() * remainingImages.length);
-        const selectedImage = remainingImages[randomIndex];
-        
-        // Remove selected image from remaining pool
-        remainingImages.splice(randomIndex, 1);
+    function cycleMushuImage() {
+        // Move to next image, loop back to start if at end
+        currentImageIndex = (currentImageIndex + 1) % mushuImages.length;
         
         const newImage = new Image();
         newImage.onload = () => {
             mushuImage.src = newImage.src;
         };
         newImage.onerror = () => {
-            console.error('Failed to load image:', selectedImage);
+            console.error('Failed to load image:', mushuImages[currentImageIndex]);
             mushuImage.src = 'images/Mushu1.jpg';
         };
-        newImage.src = `images/${selectedImage}`;
+        newImage.src = `images/${mushuImages[currentImageIndex]}`;
     }
-
-    randomizeMushuImage();
 
     function getRandomResponse() {
         let newIndex;
@@ -135,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             loadingWheel.classList.add('active');
             setTimeout(() => {
-                randomizeMushuImage();
+                cycleMushuImage();
                 setTimeout(() => {
                     mushuImage.classList.remove('loading');
                     loadingWheel.classList.remove('active');
