@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentEmoji = '';
     const emojis = ['😩', '😢', '😭', '😓'];
 
+    let emojiInterval;
+
     function selectNewEmoji() {
         const currentIndex = emojis.indexOf(currentEmoji);
         let newIndex;
@@ -185,11 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modify the click event listener
     snowQuestion.addEventListener('click', () => {
-        // Stop snowfall on first click
         if (snowflakeInterval) {
             clearInterval(snowflakeInterval);
             snowflakeInterval = null;
-            // Remove any remaining snowflakes
             snowflakeContainer.innerHTML = '';
         }
         toggleZoom();
@@ -198,11 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (clickCount === 2) {
             selectNewEmoji();
+            if (!emojiInterval) {
+                emojiInterval = setInterval(createEmoji, 500);
+            }
         }
         
-        if (clickCount >= 2) {
+        if (clickCount > 2) {
             selectNewEmoji();
-            setInterval(createEmoji, 500);
         }
     });
 }); 
