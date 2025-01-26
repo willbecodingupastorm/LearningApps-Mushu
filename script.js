@@ -73,7 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         } while (newIndex === lastImageIndex);
         
         lastImageIndex = newIndex;
-        mushuImage.src = `images/${mushuImages[newIndex]}`;
+        const newImage = new Image();
+        newImage.onload = () => {
+            mushuImage.src = newImage.src;
+        };
+        newImage.onerror = () => {
+            console.error('Failed to load image:', mushuImages[newIndex]);
+            mushuImage.src = 'images/Mushu1.jpg';
+        };
+        newImage.src = `images/${mushuImages[newIndex]}`;
     }
 
     randomizeMushuImage();
