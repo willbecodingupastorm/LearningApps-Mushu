@@ -68,16 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function cycleMushuImage() {
-        // Move to next image, loop back to start if at end
         currentImageIndex = (currentImageIndex + 1) % mushuImages.length;
         
         const newImage = new Image();
         newImage.onload = () => {
             mushuImage.src = newImage.src;
+            console.log('Successfully loaded:', mushuImages[currentImageIndex]);
         };
         newImage.onerror = () => {
             console.error('Failed to load image:', mushuImages[currentImageIndex]);
-            mushuImage.src = 'images/Mushu1.jpg';
+            // Instead of defaulting to Mushu1, try the next image
+            currentImageIndex = (currentImageIndex + 1) % mushuImages.length;
+            newImage.src = `images/${mushuImages[currentImageIndex]}`;
         };
         newImage.src = `images/${mushuImages[currentImageIndex]}`;
     }
